@@ -4,6 +4,7 @@ require './Calc/CalcInterface.php';
 require './Calc/PolishCalc.php';
 
 $calc = new PolishCalc();
+
 var_dump($calc->setExpression('3 4 +')->getResult());
 var_dump($calc->setExpression('1 2 + 4 * 3 +')->getResult());
 var_dump($calc->setExpression('7 3 4 - *')->getResult());
