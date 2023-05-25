@@ -5,7 +5,7 @@ class PolishCalc implements CalcInterface
     const WRONG_EXPRESSION = 'Wrong expression';
     const DIVISION_BY_ZERO = 'Division by zero';
 
-    const OPERATOR_ARRAY = [
+    const OPERATOR_VS_OPERAND_ARRAY = [
         '^' => 2,
         '-' => 2,
         '+' => 2,
@@ -33,9 +33,9 @@ class PolishCalc implements CalcInterface
         $a = 0;
 
         while (count($expression) > 1 && $index < count($expression)) {
-            if (in_array($expression[$index], array_keys(self::OPERATOR_ARRAY))) {
+            if (in_array($expression[$index], array_keys(self::OPERATOR_VS_OPERAND_ARRAY))) {
                 $operator = $expression[$index];
-                $operandCount = self::OPERATOR_ARRAY[$operator];
+                $operandCount = self::OPERATOR_VS_OPERAND_ARRAY[$operator];
 
                 if ($index < $operandCount) {
                     throw new Exception(self::WRONG_EXPRESSION);
